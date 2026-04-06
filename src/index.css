@@ -127,7 +127,7 @@ nav {
   top: 12%;
   width: 560px;
   height: 560px;
-  background: url('./assets/hero-bg.svg') no-repeat center / contain;
+  background: url('./assets/pixel-art.png') no-repeat center / contain;
   opacity: 0.32;
   pointer-events: none;
   z-index: 0;
