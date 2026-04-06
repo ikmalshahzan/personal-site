@@ -24,7 +24,7 @@ function App() {
         <Expertise expertise={expertise} />
       </section>
       <Skills skills={skills} />
-      <ContribSection />
+      {/* <ContribSection /> */}
       <Experience />
       <Contact />
       <Footer />
