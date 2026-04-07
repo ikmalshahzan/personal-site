@@ -266,6 +266,11 @@ section {
   padding: 6rem 2rem;
 }
 
+#skills {
+  max-width: none;
+  padding: 6rem 0;
+}
+
 .section-label {
   font-size: 0.7rem;
   color: var(--green);
@@ -333,27 +338,7 @@ section {
 }
 
 .skills-slider {
-  overflow: hidden;
-  padding: 2rem 0;
-}
-
-.skills-track {
-  display: flex;
-  animation: slide 20s linear infinite;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1rem;
-  flex-shrink: 0;
-  width: 672px; /* 7 * (80px + 16px gap) approx */
-}
-
-@keyframes slide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-672px); }
+  padding: 2rem;
 }
 
 .skill-logo {
@@ -621,28 +606,8 @@ footer span { color: var(--green); }
 
   body { padding-bottom: 60px; }
 
-  .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    width: 304px; /* 4 * (60px + 16px gap) approx */
-  }
-
-  .skills-track {
-    animation: slide-mobile 15s linear infinite;
-  }
-
-  @keyframes slide-mobile {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-304px); }
-  }
-
-  .skill-logo {
-    width: 60px;
-    height: 60px;
-  }
-
-  .skill-logo .logo {
-    font-size: 1.5rem;
+  .skills-slider {
+    padding: 1rem;
   }
 }
 

@@ -1,3 +1,6 @@
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { skills } from '../data.js';
 
 const logos = {
@@ -19,27 +22,42 @@ export default function Skills() {
   }
   repeatedSkills.splice(21);
 
-  // Duplicate for seamless loop
-  const allSkills = [...repeatedSkills, ...repeatedSkills];
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    rows: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+          rows: 3,
+        },
+      },
+    ],
+  };
 
   return (
     <section id="skills">
       <div className="section-label fade-up">// stack & proficiency</div>
       <h2 className="section-title fade-up">Skills</h2>
       <div className="skills-slider fade-up">
-        <div className="skills-track">
-          <div className="skills-grid">
-            {allSkills.map((skill, index) => (
-              <div key={index} className="skill-logo" title={`${skill.name}: ${skill.pct}% proficiency`}>
-                <div className="logo">{logos[skill.name] || '🔧'}</div>
-                <div className="skill-tooltip">
-                  <div className="tooltip-name">{skill.name}</div>
-                  <div className="tooltip-desc">Proficiency: {skill.pct}%</div>
-                </div>
+        <Slider {...settings}>
+          {repeatedSkills.map((skill, index) => (
+            <div key={index} className="skill-logo" title={`${skill.name}: ${skill.pct}% proficiency`}>
+              <div className="logo">{logos[skill.name] || '🔧'}</div>
+              <div className="skill-tooltip">
+                <div className="tooltip-name">{skill.name}</div>
+                <div className="tooltip-desc">Proficiency: {skill.pct}%</div>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );
