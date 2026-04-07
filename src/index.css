@@ -558,7 +558,7 @@ footer span { color: var(--green); }
   .mobile-nav {
     display: flex;
     position: fixed;
-    bottom: 0;
+    bottom: -90%;
     left: 0;
     right: 0;
     height: 60px;
