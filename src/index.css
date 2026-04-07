@@ -266,11 +266,6 @@ section {
   padding: 6rem 2rem;
 }
 
-#skills {
-  max-width: none;
-  padding: 6rem 0;
-}
-
 .section-label {
   font-size: 0.7rem;
   color: var(--green);
@@ -337,32 +332,51 @@ section {
   line-height: 1.7;
 }
 
-.skills-slider {
-  padding: 2rem;
+.skills-loop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  position: relative;
+}
+
+.logo-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .skill-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
   background: var(--bg2);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 50%;
   transition: all 0.3s;
-  position: relative;
   cursor: none;
 }
 
 .skill-logo:hover {
   background: var(--bg3);
   border-color: var(--green);
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .skill-logo .logo {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .skill-tooltip {
@@ -379,6 +393,7 @@ section {
   transition: opacity 0.3s, visibility 0.3s;
   white-space: nowrap;
   z-index: 10;
+  pointer-events: none;
 }
 
 .skill-logo:hover .skill-tooltip {
@@ -606,8 +621,23 @@ footer span { color: var(--green); }
 
   body { padding-bottom: 60px; }
 
-  .skills-slider {
-    padding: 1rem;
+  .skills-loop {
+    height: 300px;
+  }
+
+  .logo-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .skill-logo {
+    width: 50px;
+    height: 50px;
+    margin: -25px;
+  }
+
+  .skill-logo .logo {
+    font-size: 1.2rem;
   }
 }
 
