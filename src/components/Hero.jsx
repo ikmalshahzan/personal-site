@@ -6,13 +6,13 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-tag fade-up">Available for new projects</div>
         <h1 className="hero-name fade-up" style={{ transitionDelay: '0.1s' }}>
-          <div>IKMAL</div>
+          <div>WEB</div>
           <div className="line2">
-            SHAHZAN<span className="accent">.</span>
+            DEVELOPER<span className="accent">.</span>
           </div>
         </h1>
         <p className="hero-desc fade-up" style={{ transitionDelay: '0.2s' }}>
-          <strong>Web Solutions Developer</strong> with 5+ years turning digital visitors into business leads.
+        With 5+ years turning digital visitors into business leads.
           I build and maintain systems that <strong>integrate CRMs</strong>, automate campaign workflows,
           and deliver <strong>high-performance websites</strong> that work as hard as you do.
         </p>

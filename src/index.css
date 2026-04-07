@@ -175,7 +175,7 @@ nav {
 
 .hero-name {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(1rem, 8vw, 5rem);
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.04em;
