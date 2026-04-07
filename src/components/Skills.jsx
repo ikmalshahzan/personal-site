@@ -19,21 +19,26 @@ export default function Skills() {
   }
   repeatedSkills.splice(21);
 
+  // Duplicate for seamless loop
+  const allSkills = [...repeatedSkills, ...repeatedSkills];
+
   return (
     <section id="skills">
       <div className="section-label fade-up">// stack & proficiency</div>
       <h2 className="section-title fade-up">Skills</h2>
       <div className="skills-slider fade-up">
-        <div className="skills-grid">
-          {repeatedSkills.map((skill, index) => (
-            <div key={index} className="skill-logo" title={`${skill.name}: ${skill.pct}% proficiency`}>
-              <div className="logo">{logos[skill.name] || '🔧'}</div>
-              <div className="skill-tooltip">
-                <div className="tooltip-name">{skill.name}</div>
-                <div className="tooltip-desc">Proficiency: {skill.pct}%</div>
+        <div className="skills-track">
+          <div className="skills-grid">
+            {allSkills.map((skill, index) => (
+              <div key={index} className="skill-logo" title={`${skill.name}: ${skill.pct}% proficiency`}>
+                <div className="logo">{logos[skill.name] || '🔧'}</div>
+                <div className="skill-tooltip">
+                  <div className="tooltip-name">{skill.name}</div>
+                  <div className="tooltip-desc">Proficiency: {skill.pct}%</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
