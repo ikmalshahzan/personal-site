@@ -113,6 +113,10 @@ nav {
 
 .nav-links a:hover { color: var(--green); }
 
+.mobile-nav {
+  display: none;
+}
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -549,6 +553,31 @@ footer span { color: var(--green); }
   .hero { padding: 72px 1rem 0; }
   section { padding: 4rem 1rem; }
   .hero-stats { gap: 1.5rem; }
+
+  .desktop-nav { display: none; }
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(2,14,28,0.95);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+  }
+  .mobile-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+  }
+  .mobile-nav a:hover { color: var(--green); }
+
+  body { padding-bottom: 60px; }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap');
