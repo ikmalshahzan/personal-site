@@ -74,7 +74,12 @@ body::before {
 
 nav {
   position: fixed;
-  top: 0;
+  top: 10px;
+    padding: 0px 20px;
+    border: 1px solid var(--border);
+    border-radius: 55px;
+    width: 60%;
+    margin: auto;
   left: 0;
   right: 0;
   z-index: 100;
@@ -85,7 +90,6 @@ nav {
   justify-content: space-between;
   background: rgba(2,14,28,0.92);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
 }
 
 .nav-logo {
