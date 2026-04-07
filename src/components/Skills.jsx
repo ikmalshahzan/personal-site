@@ -1,18 +1,40 @@
-export default function Skills({ skills }) {
+import { skills } from '../data.js';
+
+const logos = {
+  'WordPress / CMS': '📰',
+  'HTML / CSS': '🌐',
+  'JavaScript / React': '⚛️',
+  'CRM Integration': '🔗',
+  'Lead Automation': '🤖',
+  'Website Performance': '🚀',
+  'Plugin Development': '🔧',
+  'SEO / Analytics': '📊',
+};
+
+export default function Skills() {
+  // Create 21 items by repeating skills
+  const repeatedSkills = [];
+  while (repeatedSkills.length < 21) {
+    repeatedSkills.push(...skills);
+  }
+  repeatedSkills.splice(21);
+
   return (
     <section id="skills">
       <div className="section-label fade-up">// stack & proficiency</div>
       <h2 className="section-title fade-up">Skills</h2>
-      <div className="skills-container fade-up">
-        {skills.map((skill, index) => (
-          <div key={index} className="skill-row">
-            <div className="skill-name">{skill.name}</div>
-            <div className="skill-bar-bg">
-              <div className="skill-bar-fill" data-pct={skill.pct} />
+      <div className="skills-slider fade-up">
+        <div className="skills-grid">
+          {repeatedSkills.map((skill, index) => (
+            <div key={index} className="skill-logo" title={`${skill.name}: ${skill.pct}% proficiency`}>
+              <div className="logo">{logos[skill.name] || '🔧'}</div>
+              <div className="skill-tooltip">
+                <div className="tooltip-name">{skill.name}</div>
+                <div className="tooltip-desc">Proficiency: {skill.pct}%</div>
+              </div>
             </div>
-            <div className="skill-pct">{skill.pct}%</div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

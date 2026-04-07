@@ -23,7 +23,7 @@ function App() {
         <h2 className="section-title fade-up">Core Expertise</h2>
         <Expertise expertise={expertise} />
       </section>
-      <Skills skills={skills} />
+      <Skills />
       {/* <ContribSection /> */}
       <Experience />
       <Contact />
