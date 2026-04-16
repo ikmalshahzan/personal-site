@@ -594,6 +594,7 @@ footer span { color: var(--green); }
   nav { padding: 0 1rem; }
   .hero { padding: 72px 1rem 0; }
   section { padding: 4rem 1rem; }
+  .container-skills { padding: 0 1rem; }
   .hero-stats { gap: 1.5rem; }
 
   .desktop-nav { display: none; }

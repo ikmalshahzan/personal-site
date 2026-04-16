@@ -1,0 +1,252 @@
+/* SkillsCarousel.css - Horizontal auto-scrolling skills carousel with fade effects */
+#skills {
+  max-width: 100%;
+  padding: 0; 
+  overflow: hidden; 
+}
+
+.container-skills {
+max-width: 1100px;
+margin: 0 auto;
+}
+
+
+.skills-carousel-wrapper {
+  position: relative;
+  width: 100vw;
+  left: 0%;
+  right: 0%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 180px;
+  overflow: hidden;
+  margin: 40px 0;
+}
+
+/* Scroll container - handles the horizontal scrolling */
+.carousel-scroll-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: auto;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Content wrapper - contains all carousel items */
+.carousel-content {
+  display: flex;
+  gap: 20px;
+  padding: 20px 40px;
+  height: 100%;
+  width: max-content;
+}
+
+/* Individual carousel item */
+.carousel-item {
+  flex-shrink: 0;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: scale(1.1);
+}
+
+/* Skill card container */
+.skill-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill logo/icon */
+.skill-logo {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin-bottom: 10px;
+  animation: slideInUp 0.5s ease-out;
+}
+
+/* Fade overlays on left and right edges */
+.carousel-fade {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 80px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.carousel-fade-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 20, 1),
+    rgba(10, 10, 20, 0.7),
+    rgba(10, 10, 20, 0)
+  );
+}
+
+.carousel-fade-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(10, 10, 20, 1),
+    rgba(10, 10, 20, 0.7),
+    rgba(10, 10, 20, 0)
+  );
+}
+
+/* Carousel tooltip */
+.carousel-tooltip {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  white-space: nowrap;
+  font-size: 14px;
+  z-index: 20;
+  animation: tooltipFadeIn 0.2s ease-out;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.tooltip-name {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.tooltip-proficiency {
+  font-size: 12px;
+  color: #a0aec0;
+  margin-bottom: 4px;
+}
+
+.tooltip-description {
+  font-size: 12px;
+  color: #cbd5e0;
+  max-width: 200px;
+  line-height: 1.4;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-carousel-wrapper {
+    height: 150px;
+    margin: 30px 0;
+  }
+
+  .carousel-content {
+    padding: 15px 30px;
+    gap: 15px;
+  }
+
+  .carousel-item {
+    width: 100px;
+  }
+
+  .skill-logo {
+    font-size: 40px;
+    height: 50px;
+    margin-bottom: 8px;
+  }
+
+  .carousel-fade {
+    width: 60px;
+  }
+
+  .carousel-tooltip {
+    bottom: -70px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-carousel-wrapper {
+    height: 130px;
+    margin: 20px 0;
+  }
+
+  .carousel-content {
+    padding: 12px 20px;
+    gap: 12px;
+  }
+
+  .carousel-item {
+    width: 90px;
+  }
+
+  .skill-logo {
+    font-size: 32px;
+    height: 40px;
+    margin-bottom: 6px;
+  }
+
+  .carousel-fade {
+    width: 40px;
+  }
+
+  .carousel-tooltip {
+    bottom: -65px;
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+}

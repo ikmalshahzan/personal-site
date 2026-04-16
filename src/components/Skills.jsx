@@ -1,4 +1,5 @@
 import { skills } from '../data.js';
+import SkillsCarousel from './SkillsCarousel.jsx';
 
 const logos = {
   'WordPress / CMS': '📰',
@@ -12,32 +13,21 @@ const logos = {
 };
 
 export default function Skills() {
+  // Transform skills to include icons for carousel
+  const skillsWithIcons = skills.map((skill) => ({
+    ...skill,
+    icon: logos[skill.name] || '🔧',
+  }));
+
   return (
     <section id="skills">
-      <div className="section-label fade-up">// stack & proficiency</div>
-      <h2 className="section-title fade-up">Skills</h2>
-      <div className="skills-loop fade-up">
-        <div className="logo-container">
-          {skills.map((skill, index) => {
-            const angle = (360 / skills.length) * index;
-            return (
-              <div
-                key={index}
-                className="skill-logo"
-                style={{
-                  transform: `rotate(${angle}deg) translateY(-120px) rotate(-${angle}deg)`,
-                }}
-                title={`${skill.name}: ${skill.pct}% proficiency`}
-              >
-                <div className="logo">{logos[skill.name] || '🔧'}</div>
-                <div className="skill-tooltip">
-                  <div className="tooltip-name">{skill.name}</div>
-                  <div className="tooltip-desc">Proficiency: {skill.pct}%</div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      <div className="container-skills">
+        <div className="section-label fade-up">// stack & proficiency</div>
+        <h2 className="section-title fade-up">Skills</h2>
+      </div>
+        
+      <div className="fade-up">
+        <SkillsCarousel items={skillsWithIcons} speed={30} />
       </div>
     </section>
   );
