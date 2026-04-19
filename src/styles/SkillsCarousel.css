@@ -19,7 +19,7 @@ margin: 0 auto;
   margin-left: -50vw;
   margin-right: -50vw;
   height: 180px;
-  overflow: hidden;
+  overflow: visible;
   margin: 40px 0;
 }
 
@@ -130,7 +130,7 @@ margin: 0 auto;
 /* Carousel tooltip */
 .carousel-tooltip {
   position: absolute;
-  bottom: -80px;
+  top: -100px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(20, 20, 30, 0.95);
@@ -214,7 +214,7 @@ margin: 0 auto;
   }
 
   .carousel-tooltip {
-    bottom: -70px;
+    top: -90px;
     font-size: 13px;
   }
 }
@@ -245,7 +245,7 @@ margin: 0 auto;
   }
 
   .carousel-tooltip {
-    bottom: -65px;
+    top: -80px;
     font-size: 12px;
     padding: 10px 12px;
   }
