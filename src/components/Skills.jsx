@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { skills } from '../data.js';
 import SkillsCarousel from './SkillsCarousel.jsx';
 
@@ -19,16 +20,49 @@ export default function Skills() {
     icon: logos[skill.name] || '🔧',
   }));
 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: 'easeOut',
+      },
+    },
+  };
+
   return (
     <section id="skills">
       <div className="container-skills">
-        <div className="section-label fade-up">// stack & proficiency</div>
-        <h2 className="section-title fade-up">Skills</h2>
+        <motion.div
+          className="section-label"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.12 }}
+          variants={itemVariants}
+        >
+          // stack & proficiency
+        </motion.div>
+        <motion.h2
+          className="section-title"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.12 }}
+          variants={itemVariants}
+        >
+          Skills
+        </motion.h2>
       </div>
         
-      <div className="fade-up">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.12 }}
+        variants={itemVariants}
+      >
         <SkillsCarousel items={skillsWithIcons} speed={30} />
-      </div>
+      </motion.div>
     </section>
   );
 }

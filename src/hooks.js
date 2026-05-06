@@ -20,22 +20,6 @@ export function useCursor() {
   }, []);
 }
 
-export function useFadeUp() {
-  useEffect(() => {
-    const els = document.querySelectorAll('.fade-up');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
-}
-
 export function useSkillBars() {
   useEffect(() => {
     const bars = document.querySelectorAll('.skill-bar-fill');
